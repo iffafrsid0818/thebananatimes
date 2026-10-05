@@ -1,14 +1,350 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Banana Times</title><style>
-:root{--ink:#151515;--muted:#666;--paper:#faf9f5;--rule:#bbb;--accent:#8b1e1e}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}.wrap{max-width:1180px;margin:auto;padding:0 24px}.top{font:12px Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;text-align:center;padding:10px;border-bottom:1px solid #ddd}header{text-align:center;padding:25px 0 14px}.brand{font-size:clamp(42px,7vw,78px);font-weight:900;letter-spacing:-.055em}.brand a{color:inherit;text-decoration:none}.banana{font-size:.22em;vertical-align:middle;margin-right:.35em;display:inline-block;transform:scaleX(.55) rotate(-28deg);border-radius:70% 30% 70% 30%}.tag{font-style:italic;color:var(--muted);margin-top:4px}nav{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;justify-content:center;gap:28px;padding:10px;flex-wrap:wrap;font:700 12px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}nav a{color:inherit;text-decoration:none}.date{font:12px Arial,sans-serif;color:var(--muted);padding:16px 0;border-bottom:1px solid #ccc}.kicker{font:700 12px Arial,sans-serif;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;padding:32px 0;border-bottom:3px solid var(--ink)}h1{font-size:clamp(38px,5vw,65px);line-height:.98;letter-spacing:-.035em;margin:10px 0 16px}.dek{font-size:20px;line-height:1.45;color:#444}.byline{font:12px Arial,sans-serif;margin-top:22px;text-transform:uppercase}.hero img{width:100%;display:block}.caption{font:11px Arial,sans-serif;color:#666;margin-top:7px;line-height:1.4}.grid{display:grid;grid-template-columns:repeat(3,1fr);padding:28px 0}.card{padding:0 25px;border-right:1px solid #bbb}.card:first-child{padding-left:0}.card:last-child{border:0;padding-right:0}.card h2{font-size:27px;line-height:1.08;margin:8px 0}.card p{color:#555;line-height:1.45}.card a,.hero a{color:inherit;text-decoration:none}.article{max-width:780px;margin:38px auto 80px}.article h1{font-size:clamp(42px,6vw,70px)}.article .dek{font-size:22px}.article figure{margin:32px 0}.article figure img{width:100%;display:block}.article-body{font-size:20px;line-height:1.68}.article-body p{margin:0 0 1.25em}.dateline{font-weight:bold;font-size:.88em;letter-spacing:.02em}blockquote{font-size:27px;line-height:1.3;margin:35px 0;padding-left:24px;border-left:4px solid #222}footer{border-top:3px solid var(--ink);padding:30px 0 50px;text-align:center;font:12px Arial,sans-serif;color:#666}@media(max-width:760px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card{border-right:0;border-bottom:1px solid #bbb;padding:18px 0}.article-body{font-size:18px}}
-</style></head><body><div class="top">SATIRE · All stories on this site are fictional</div><div class="wrap"><header><div class="brand"><a href="index.html"><span class="banana">●</span> The Banana Times</a></div><div class="tag">Independent. Serious. Mostly.</div></header><nav><a href="#">India</a><a href="#">World</a><a href="#">Business</a><a href="#">Technology</a><a href="#">Culture</a><a href="#">Opinion</a></nav><div class="date">Monday, October 5, 2026</div><main>
-<section class="hero"><div><div class="kicker">Technology</div><a href="mehta-ai-photo.html"><h1>Man Sues AI Company Over Dispute About His Appearance in 1980</h1></a><p class="dek">Raghav Mehta says an AI reconstruction made him less handsome than he remembers. The photographic evidence has complicated the case.</p><div class="byline">By The Banana Times Staff · Mumbai</div></div><div><a href="mehta-ai-photo.html"><img src="mehta_ai_vs_original.png" alt="Side-by-side AI generated and original portraits"></a><div class="caption">Left: AI reconstruction. Right: original photograph submitted in the dispute.</div></div></section>
-<section class="grid">
-<article class="card"><div class="kicker">India · Public Safety</div><a href="police-running-test-banana-times.html"><h2>Police Physical Test Updated After Viral Van-Key Incident</h2></a><p>Recruits will be tested from different starting positions, with the viral runner's speed serving as the minimum benchmark.</p></article>
-<article class="card"><div class="kicker">India · Science</div><a href="bengaluru-spacetime-traffic.html"><h2>IISc Professors Hired to Investigate Possible Space-Time Problem in Bengaluru Traffic</h2></a><p>Conventional explanations exhausted; Einstein called in to explain the morning commute.</p></article>
-<article class="card"><div class="kicker">Business</div><h2>Startup Reaches Unicorn Status After Adding “AI” to Company Name</h2><p>Executives clarified that the company's principal product remains an Excel spreadsheet.</p></article>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Banana Times</title>
+
+<style>
+:root{
+  --ink:#151515;
+  --muted:#666;
+  --paper:#faf9f5;
+  --rule:#bbb;
+  --accent:#8b1e1e
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif
+}
+
+.wrap{
+  max-width:1180px;
+  margin:auto;
+  padding:0 24px
+}
+
+.top{
+  font:12px Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  text-align:center;
+  padding:10px;
+  border-bottom:1px solid #ddd
+}
+
+header{
+  text-align:center;
+  padding:25px 0 14px
+}
+
+.brand{
+  font-size:clamp(42px,7vw,78px);
+  font-weight:900;
+  letter-spacing:-.055em
+}
+
+.brand a{
+  color:inherit;
+  text-decoration:none
+}
+
+.banana{
+  font-size:.22em;
+  vertical-align:middle;
+  margin-right:.35em;
+  display:inline-block;
+  transform:scaleX(.55) rotate(-28deg);
+  border-radius:70% 30% 70% 30%
+}
+
+.tag{
+  font-style:italic;
+  color:var(--muted);
+  margin-top:4px
+}
+
+nav{
+  border-top:3px solid var(--ink);
+  border-bottom:1px solid var(--ink);
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  padding:10px;
+  flex-wrap:wrap;
+  font:700 12px Arial,sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase
+}
+
+nav a{
+  color:inherit;
+  text-decoration:none
+}
+
+.date{
+  font:12px Arial,sans-serif;
+  color:var(--muted);
+  padding:16px 0;
+  border-bottom:1px solid #ccc
+}
+
+.kicker{
+  font:700 12px Arial,sans-serif;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.12em
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:34px;
+  padding:32px 0;
+  border-bottom:3px solid var(--ink)
+}
+
+h1{
+  font-size:clamp(38px,5vw,65px);
+  line-height:.98;
+  letter-spacing:-.035em;
+  margin:10px 0 16px
+}
+
+.dek{
+  font-size:20px;
+  line-height:1.45;
+  color:#444
+}
+
+.byline{
+  font:12px Arial,sans-serif;
+  margin-top:22px;
+  text-transform:uppercase
+}
+
+.hero img{
+  width:100%;
+  display:block
+}
+
+.caption{
+  font:11px Arial,sans-serif;
+  color:#666;
+  margin-top:7px;
+  line-height:1.4
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  padding:28px 0
+}
+
+.card{
+  padding:0 25px;
+  border-right:1px solid #bbb
+}
+
+.card:first-child{
+  padding-left:0
+}
+
+.card:last-child{
+  border:0;
+  padding-right:0
+}
+
+.card h2{
+  font-size:27px;
+  line-height:1.08;
+  margin:8px 0
+}
+
+.card p{
+  color:#555;
+  line-height:1.45
+}
+
+.card a,
+.hero a{
+  color:inherit;
+  text-decoration:none
+}
+
+footer{
+  border-top:3px solid var(--ink);
+  padding:30px 0 50px;
+  text-align:center;
+  font:12px Arial,sans-serif;
+  color:#666
+}
+
+@media(max-width:760px){
+  .hero{
+    grid-template-columns:1fr
+  }
+
+  .grid{
+    grid-template-columns:1fr
+  }
+
+  .card{
+    border-right:0;
+    border-bottom:1px solid #bbb;
+    padding:18px 0
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+SATIRE · All stories on this site are fictional
+</div>
+
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <a href="index.html">
+      <span class="banana">●</span> The Banana Times
+    </a>
+  </div>
+
+  <div class="tag">
+    Independent. Serious. Mostly.
+  </div>
+</header>
+
+<nav>
+  <a href="#">India</a>
+  <a href="#">World</a>
+  <a href="#">Business</a>
+  <a href="#">Technology</a>
+  <a href="#">Culture</a>
+  <a href="#">Opinion</a>
+</nav>
+
+<div class="date">
+Monday, October 5, 2026
+</div>
+
+<main>
+
+<section class="hero">
+
+  <div>
+
+    <div class="kicker">
+      Technology
+    </div>
+
+    <a href="mehta-ai-photo.html">
+      <h1>
+        Man Sues AI Company Over Dispute About His Appearance in 1980
+      </h1>
+    </a>
+
+    <p class="dek">
+      Raghav Mehta says an AI reconstruction made him less handsome
+      than he remembers. The photographic evidence has complicated
+      the case.
+    </p>
+
+    <div class="byline">
+      By The Banana Times Staff · Mumbai
+    </div>
+
+  </div>
+
+  <div>
+
+    <a href="mehta-ai-photo.html">
+      <img
+        src="mehta_ai_vs_original.png"
+        alt="Side-by-side AI generated and original portraits">
+    </a>
+
+    <div class="caption">
+      Left: AI reconstruction. Right: original photograph submitted
+      in the dispute.
+    </div>
+
+  </div>
+
 </section>
+
+
 <section class="grid">
-<article class="card"><div class="kicker">Culture</div><h2>Family WhatsApp Group Successfully Solves Geopolitics Before Breakfast</h2><p>The breakthrough followed three forwarded videos and a good-morning flower GIF.</p></article>
+
+  <article class="card">
+
+    <div class="kicker">
+      India · Public Safety
+    </div>
+
+    <a href="police-running-test-banana-times.html">
+      <h2>
+        Police Physical Test Updated After Viral Van-Key Incident
+      </h2>
+    </a>
+
+    <p>
+      Recruits will be tested from different starting positions,
+      with the viral runner's speed serving as the minimum benchmark.
+    </p>
+
+  </article>
+
+
+  <article class="card">
+
+    <div class="kicker">
+      India · Science
+    </div>
+
+    <a href="bengaluru-spacetime-traffic.html">
+      <h2>
+        IISc Professors Hired to Investigate Possible Space-Time
+        Problem in Bengaluru Traffic
+      </h2>
+    </a>
+
+    <p>
+      Conventional explanations exhausted; Einstein called in
+      to explain the morning commute.
+    </p>
+
+  </article>
+
 </section>
-</main><footer><strong>The Banana Times</strong><br><br>This is a fictional satire publication. Names and stories are invented for comedic purposes.<br><br>© 2026 The Banana Times · EST. 2026</footer></div></body></html>
+
+</main>
+
+
+<footer>
+
+  <strong>The Banana Times</strong>
+
+  <br><br>
+
+  This is a fictional satire publication.
+  Names and stories are invented for comedic purposes.
+
+  <br><br>
+
+  © 2026 The Banana Times · EST. 2026
+
+</footer>
+
+</div>
+
+</body>
+</html>
