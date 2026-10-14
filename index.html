@@ -25,7 +25,12 @@ async function firstUploadDate(path){
 function card(a){return `<article class="story-card"><div class="kicker">${escapeHTML(a.category)}</div><a href="${escapeHTML(a.href)}"><h2>${escapeHTML(a.title)}</h2></a><p>${escapeHTML(a.dek)}</p></article>`;}
 function render(sorted, verified){
  const root=document.getElementById('news');
- if(!verified){root.innerHTML=`<div class="status">Publication dates could not be verified from GitHub. Showing all articles without claiming which is newest.</div><section class="story-grid">${sorted.map(card).join('')}</section>`;return;}
+ if(!verified){
+   const fallback=[...articles].reverse();
+   const [lead,...rest]=fallback;
+   root.innerHTML=`<section class="story-lead"><div class="kicker">Latest story · ${escapeHTML(lead.category)}</div><a href="${escapeHTML(lead.href)}"><h1>${escapeHTML(lead.title)}</h1></a><p class="dek">${escapeHTML(lead.dek)}</p>${lead.image?`<a href="${escapeHTML(lead.href)}"><img src="${escapeHTML(lead.image)}" alt="Article illustration"></a>`:''}</section><section class="story-grid">${rest.map(card).join('')}</section>`;
+   return;
+ }
  const [lead,...rest]=sorted;
  root.innerHTML=`<section class="story-lead"><div class="kicker">Latest story · ${escapeHTML(lead.category)}</div><a href="${escapeHTML(lead.href)}"><h1>${escapeHTML(lead.title)}</h1></a><p class="dek">${escapeHTML(lead.dek)}</p>${lead.image?`<a href="${escapeHTML(lead.href)}"><img src="${escapeHTML(lead.image)}" alt="Article illustration"></a>`:''}</section><section class="story-grid">${rest.map(card).join('')}</section>`;
 }
