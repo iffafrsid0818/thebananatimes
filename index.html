@@ -1,36 +1,180 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Banana Times</title><style>
-:root{--ink:#151515;--muted:#666;--paper:#faf9f5;--rule:#bbb;--accent:#8b1e1e}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}.wrap{max-width:1180px;margin:auto;padding:0 24px}.top{font:12px Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;text-align:center;padding:10px;border-bottom:1px solid #ddd}header{text-align:center;padding:25px 0 14px}.brand{font-size:clamp(42px,7vw,78px);font-weight:900;letter-spacing:-.055em}.brand a{color:inherit;text-decoration:none}.banana{font-size:.22em;vertical-align:middle;margin-right:.35em;display:inline-block;transform:scaleX(.55) rotate(-28deg);border-radius:70% 30% 70% 30%}.tag{font-style:italic;color:var(--muted);margin-top:4px}nav{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;justify-content:center;gap:28px;padding:10px;flex-wrap:wrap;font:700 12px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}nav a{color:inherit;text-decoration:none}.date{font:12px Arial,sans-serif;color:var(--muted);padding:16px 0;border-bottom:1px solid #ccc}.kicker{font:700 12px Arial,sans-serif;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;padding:32px 0;border-bottom:3px solid var(--ink)}h1{font-size:clamp(38px,5vw,65px);line-height:.98;letter-spacing:-.035em;margin:10px 0 16px}.dek{font-size:20px;line-height:1.45;color:#444}.byline{font:12px Arial,sans-serif;margin-top:22px;text-transform:uppercase}.hero img{width:100%;display:block}.caption{font:11px Arial,sans-serif;color:#666;margin-top:7px;line-height:1.4}.grid{display:grid;grid-template-columns:repeat(2,1fr);padding:28px 0}.card{padding:24px 30px;border-right:1px solid #bbb;border-bottom:1px solid #bbb}.card:nth-child(-n+2){padding-top:0}.card:nth-child(odd){padding-left:0}.card:nth-child(even){padding-right:0;border-right:0}.card:nth-last-child(-n+2){padding-bottom:0;border-bottom:0}.card:last-child:nth-child(odd){grid-column:1/-1;border-right:0;padding-left:0;padding-right:0}.card h2{font-size:27px;line-height:1.08;margin:8px 0}.card p{color:#555;line-height:1.45}.card a,.hero a{color:inherit;text-decoration:none}.article{max-width:780px;margin:38px auto 80px}.article h1{font-size:clamp(42px,6vw,70px)}.article .dek{font-size:22px}.article figure{margin:32px 0}.article figure img{width:100%;display:block}.article-body{font-size:20px;line-height:1.68}.article-body p{margin:0 0 1.25em}.dateline{font-weight:bold;font-size:.88em;letter-spacing:.02em}blockquote{font-size:27px;line-height:1.3;margin:35px 0;padding-left:24px;border-left:4px solid #222}footer{border-top:3px solid var(--ink);padding:30px 0 50px;text-align:center;font:12px Arial,sans-serif;color:#666}@media(max-width:760px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card,.card:nth-child(odd),.card:nth-child(even),.card:nth-child(-n+2),.card:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #bbb;padding:18px 0}.card:last-child{border-bottom:0}.article-body{font-size:18px}}
 
-.story-lead{border-bottom:3px solid var(--ink);padding:30px 0 34px}.story-lead h1{font-size:clamp(36px,5vw,64px);max-width:950px}.story-lead .dek{max-width:850px}.story-lead img{max-width:600px;width:100%;height:auto;margin-top:18px}.story-lead a,.story-grid a{color:inherit;text-decoration:none}.story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:22px 0 38px}.story-card{padding:22px 20px;border-right:1px solid #bbb;border-bottom:1px solid #bbb}.story-card:nth-child(3n+1){padding-left:0}.story-card:nth-child(3n){border-right:0}.story-card h2{font-size:25px;line-height:1.13;margin:9px 0}.story-card p{line-height:1.45;color:#555}.story-date{font:12px Arial,sans-serif;color:#777;margin-top:10px}.status{padding:20px 0;font:13px Arial,sans-serif;color:#555}@media(max-width:760px){.story-grid{grid-template-columns:1fr}.story-card,.story-card:nth-child(3n+1){padding:18px 0;border-right:0}.story-lead{padding:24px 0}}
-</style></head><body><div class="top">SATIRE · All stories on this site are fictional</div><div class="wrap"><header><div class="brand"><a href="index.html"><span class="banana">●</span> The Banana Times</a></div><div class="tag">Independent. Serious. Mostly.</div></header><nav><a href="#">India</a><a href="#">World</a><a href="#">Business</a><a href="#">Technology</a><a href="#">Culture</a><a href="#">Opinion</a></nav><div class="date">The Banana Times · Latest stories</div><main id="news"><div class="status">Checking article publication dates from GitHub…</div></main><footer><strong>The Banana Times</strong><p>This is a fictional satire publication. Names and stories are invented for comedic purposes.</p>© 2026 The Banana Times · EST. 2026</footer></div><script>
-const articles = [{"href": "bus-rooftop-seating.html", "title": "Bus Manufacturer Introduces Rooftop Seating After Railways Reinforce Train Roofs for Passengers", "category": "India · Transport", "dek": "A bus manufacturer promises rooftop seats and safety belts, as an influencer celebrates progress without the expense of more buses or wider roads.", "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Bus_with_Passengers_-_Indian_National_Highway_34_-_Nakashipara_-_Nadia_2013-03-23_7099.JPG"}, {"href": "madhya-pradesh-river-cleaning-with-image.html", "title": "Residents Seek Government Recognition for ‘Efficient’ River-Cleaning System", "category": "India", "dek": "Residents say a volunteer’s eight-month cleanup has created an efficient arrangement: they provide the garbage, and he provides the cleaning.", "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Plastic_waste_in_river.jpg"}, {"href": "mehta-ai-photo.html", "title": "Man Sues AI Company Over Dispute About His Appearance in 1980", "category": "Technology", "dek": "Raghav Mehta says an AI reconstruction made him less handsome than he remembers. The photographic evidence has complicated the case.", "image": "mehta_ai_vs_original.png"}, {"href": "police-running-test-banana-times.html", "title": "Police Physical Test Updated After Viral Van-Key Incident", "category": "India", "dek": "New training standards will require recruits to chase an instructor who grabs a police van key, with a viral incident providing the minimum running-speed benchmark."}, {"href": "ai-durga-pandal-conflicting-prayers.html", "title": "AI Durga Pandal Faces First Crisis After Family Makes Conflicting Prayers", "category": "Culture", "dek": "A mother wants her son to get a permanent government job in Kolkata. His wife wants him transferred as far away as possible."}, {"href": "bengaluru-spacetime-traffic.html", "title": "Scientists Investigate Whether Bengaluru Traffic Has Distorted Space-Time", "category": "India", "dek": "Researchers say ordinary congestion may no longer be enough to explain why a short trip can consume an alarming portion of the day."}, {"href": "hyderabad-midnight-birthday-investigation.html", "title": "Forensic Team Called After Suspected Midnight Birthday Celebration on Tank Bund", "category": "India", "dek": "Police examine fingerprints, DNA and CCTV footage as an apparently routine birthday cake becomes the focus of an unusually serious investigation."}, {"href": "delhi-samosa-eligibility-protest.html", "title": "Detainees Protest After Delhi Police Introduces Strict Samosa Eligibility Rules", "category": "India", "dek": "A dispute over who qualified for a samosa after detention has expanded into demands for transparent eligibility rules — and questions about what the samosa actually certifies."}];
-const owner='iffafrsid0818', repo='thebananatimes';
-const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-async function firstUploadDate(path){
-  // GitHub commit API lists newest first; the final page holds the earliest commit.
-  const base=`https://api.github.com/repos/${owner}/${repo}/commits?path=${encodeURIComponent(path)}&per_page=100`;
-  let url=base, earliest=null;
-  for(let i=0;i<15 && url;i++){
-    const r=await fetch(url,{headers:{'Accept':'application/vnd.github+json'}});
-    if(!r.ok) throw new Error('GitHub history unavailable: '+r.status);
-    const commits=await r.json();
-    if(!Array.isArray(commits)||!commits.length) return null;
-    earliest=commits[commits.length-1].commit.author.date;
-    const next=(r.headers.get('Link')||'').split(',').find(x=>x.includes('rel="next"'));
-    url=next?next.match(/<([^>]+)>/)?.[1]:null;
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Banana Times</title>
+<style>
+:root{--ink:#151515;--muted:#666;--paper:#faf9f5;--rule:#bbb;--accent:#8b1e1e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+.wrap{max-width:1180px;margin:auto;padding:0 24px}
+.top{font:12px Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;text-align:center;padding:10px;border-bottom:1px solid #ddd}
+header{text-align:center;padding:25px 0 14px}
+.brand{font-size:clamp(42px,7vw,78px);font-weight:900;letter-spacing:-.055em}
+.brand a{color:inherit;text-decoration:none}
+.banana{font-size:.22em;vertical-align:middle;margin-right:.35em;display:inline-block;transform:scaleX(.55) rotate(-28deg);border-radius:70% 30% 70% 30%}
+.tag{font-style:italic;color:var(--muted);margin-top:4px}
+nav{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;justify-content:center;gap:28px;padding:10px;flex-wrap:wrap;font:700 12px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+nav a{color:inherit;text-decoration:none}
+.date{font:12px Arial,sans-serif;color:var(--muted);padding:16px 0;border-bottom:1px solid #ccc}
+.kicker{font:700 12px Arial,sans-serif;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;padding:32px 0;border-bottom:3px solid var(--ink)}
+h1{font-size:clamp(38px,5vw,65px);line-height:.98;letter-spacing:-.035em;margin:10px 0 16px}
+.dek{font-size:20px;line-height:1.45;color:#444}
+.byline{font:12px Arial,sans-serif;margin-top:22px;text-transform:uppercase}
+.hero img{width:100%;display:block}
+.caption{font:11px Arial,sans-serif;color:#666;margin-top:7px;line-height:1.4}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);padding:28px 0}
+.card{padding:24px 30px;border-right:1px solid #bbb;border-bottom:1px solid #bbb}
+.card:nth-child(-n+2){padding-top:0}
+.card:nth-child(odd){padding-left:0}
+.card:nth-child(even){padding-right:0;border-right:0}
+.card:nth-last-child(-n+2){padding-bottom:0;border-bottom:0}
+.card:last-child:nth-child(odd){grid-column:1/-1;border-right:0;padding-left:0;padding-right:0}
+.card h2{font-size:27px;line-height:1.08;margin:8px 0}
+.card p{color:#555;line-height:1.45}
+.card a,.hero a{color:inherit;text-decoration:none}
+.article{max-width:780px;margin:38px auto 80px}
+.article h1{font-size:clamp(42px,6vw,70px)}
+.article .dek{font-size:22px}
+.article figure{margin:32px 0}
+.article figure img{width:100%;display:block}
+.article-body{font-size:20px;line-height:1.68}
+.article-body p{margin:0 0 1.25em}
+.dateline{font-weight:bold;font-size:.88em;letter-spacing:.02em}
+blockquote{font-size:27px;line-height:1.3;margin:35px 0;padding-left:24px;border-left:4px solid #222}
+footer{border-top:3px solid var(--ink);padding:30px 0 50px;text-align:center;font:12px Arial,sans-serif;color:#666}
+@media(max-width:760px){
+.hero{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
+.card,.card:nth-child(odd),.card:nth-child(even),.card:nth-child(-n+2),.card:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #bbb;padding:18px 0}
+.card:last-child{border-bottom:0}
+.article-body{font-size:18px}
+}
+
+.story-lead{border-bottom:3px solid var(--ink);padding:30px 0 34px}
+.story-lead h1{font-size:clamp(36px,5vw,64px);max-width:950px}
+.story-lead .dek{max-width:850px}
+.story-lead img{max-width:600px;width:100%;height:auto;margin-top:18px}
+.story-lead a,.story-grid a{color:inherit;text-decoration:none}
+.story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:22px 0 38px}
+.story-card{padding:22px 20px;border-right:1px solid #bbb;border-bottom:1px solid #bbb}
+.story-card:nth-child(3n+1){padding-left:0}
+.story-card:nth-child(3n){border-right:0}
+.story-card h2{font-size:25px;line-height:1.13;margin:9px 0}
+.story-card p{line-height:1.45;color:#555}
+.story-date{font:12px Arial,sans-serif;color:#777;margin-top:10px}
+.status{padding:20px 0;font:13px Arial,sans-serif;color:#555}
+@media(max-width:760px){
+.story-grid{grid-template-columns:1fr}
+.story-card,.story-card:nth-child(3n+1){padding:18px 0;border-right:0}
+.story-lead{padding:24px 0}
+}
+</style>
+</head>
+<body>
+<div class="top">SATIRE · All stories on this site are fictional</div>
+<div class="wrap">
+<header>
+<div class="brand"><a href="index.html"><span class="banana">●</span> The Banana Times</a></div>
+<div class="tag">Independent. Serious. Mostly.</div>
+</header>
+<nav>
+<a href="#">India</a>
+<a href="#">World</a>
+<a href="#">Business</a>
+<a href="#">Technology</a>
+<a href="#">Culture</a>
+<a href="#">Opinion</a>
+</nav>
+<div class="date">The Banana Times · Latest stories</div>
+<main id="news"><div class="status">Checking article publication dates from GitHub…</div></main>
+<footer>
+<strong>The Banana Times</strong>
+<p>This is a fictional satire publication. Names and stories are invented for comedic purposes.</p>
+© 2026 The Banana Times · EST. 2026
+</footer>
+</div>
+<script>
+const articles = [
+  {
+    "href": "bus-rooftop-seating.html",
+    "date": "2026-10-16",
+    "title": "Bus Manufacturer Introduces Rooftop Seating After Railways Reinforce Train Roofs for Passengers",
+    "category": "India · Transport",
+    "dek": "A bus manufacturer promises rooftop seats and safety belts, as an influencer celebrates progress without the expense of more buses or wider roads.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Bus_with_Passengers_-_Indian_National_Highway_34_-_Nakashipara_-_Nadia_2013-03-23_7099.JPG"
+  },
+  {
+    "href": "madhya-pradesh-river-cleaning-with-image.html",
+    "date": "2026-10-14",
+    "title": "Residents Seek Government Recognition for ‘Efficient’ River-Cleaning System",
+    "category": "India",
+    "dek": "Residents say a volunteer’s eight-month cleanup has created an efficient arrangement: they provide the garbage, and he provides the cleaning.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Plastic_waste_in_river.jpg"
+  },
+  {
+    "href": "mehta-ai-photo.html",
+    "title": "Man Sues AI Company Over Dispute About His Appearance in 1980",
+    "category": "Technology",
+    "dek": "Raghav Mehta says an AI reconstruction made him less handsome than he remembers. The photographic evidence has complicated the case.",
+    "image": "mehta_ai_vs_original.png"
+  },
+  {
+    "href": "police-running-test-banana-times.html",
+    "title": "Police Physical Test Updated After Viral Van-Key Incident",
+    "category": "India",
+    "dek": "New training standards will require recruits to chase an instructor who grabs a police van key, with a viral incident providing the minimum running-speed benchmark."
+  },
+  {
+    "href": "ai-durga-pandal-conflicting-prayers.html",
+    "title": "AI Durga Pandal Faces First Crisis After Family Makes Conflicting Prayers",
+    "category": "Culture",
+    "dek": "A mother wants her son to get a permanent government job in Kolkata. His wife wants him transferred as far away as possible."
+  },
+  {
+    "href": "bengaluru-spacetime-traffic.html",
+    "title": "Scientists Investigate Whether Bengaluru Traffic Has Distorted Space-Time",
+    "category": "India",
+    "dek": "Researchers say ordinary congestion may no longer be enough to explain why a short trip can consume an alarming portion of the day."
+  },
+  {
+    "href": "hyderabad-midnight-birthday-investigation.html",
+    "title": "Forensic Team Called After Suspected Midnight Birthday Celebration on Tank Bund",
+    "category": "India",
+    "dek": "Police examine fingerprints, DNA and CCTV footage as an apparently routine birthday cake becomes the focus of an unusually serious investigation."
+  },
+  {
+    "href": "delhi-samosa-eligibility-protest.html",
+    "title": "Detainees Protest After Delhi Police Introduces Strict Samosa Eligibility Rules",
+    "category": "India",
+    "dek": "A dispute over who qualified for a samosa after detention has expanded into demands for transparent eligibility rules — and questions about what the samosa actually certifies."
   }
-  return earliest;
+];
+
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function card(a){
+return `<article class="story-card"><div class="kicker">${escapeHTML(a.category)}</div><a href="${escapeHTML(a.href)}"><h2>${escapeHTML(a.title)}</h2></a><p>${escapeHTML(a.dek)}</p>${a.date?`<div class="story-date">${new Date(a.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</div>`:''}</article>`;
 }
-function card(a){return `<article class="story-card"><div class="kicker">${escapeHTML(a.category)}</div><a href="${escapeHTML(a.href)}"><h2>${escapeHTML(a.title)}</h2></a><p>${escapeHTML(a.dek)}</p>${a.date?`<div class="story-date">${new Date(a.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</div>`:''}</article>`;}
-function render(sorted, verified){
+
+function render(sorted){
  const root=document.getElementById('news');
- if(!verified){root.innerHTML=`<div class="status">Publication dates could not be verified from GitHub. Showing all articles without claiming which is newest.</div><section class="story-grid">${sorted.map(card).join('')}</section>`;return;}
  const [lead,...rest]=sorted;
- root.innerHTML=`<section class="story-lead"><div class="kicker">Latest story · ${escapeHTML(lead.category)}</div><a href="${escapeHTML(lead.href)}"><h1>${escapeHTML(lead.title)}</h1></a><p class="dek">${escapeHTML(lead.dek)}</p><div class="story-date">${new Date(lead.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</div>${lead.image?`<a href="${escapeHTML(lead.href)}"><img src="${escapeHTML(lead.image)}" alt="Article illustration"></a>`:''}</section><section class="story-grid">${rest.map(card).join('')}</section>`;
+ root.innerHTML=`<section class="story-lead"><div class="kicker">Latest story · ${escapeHTML(lead.category)}</div><a href="${escapeHTML(lead.href)}"><h1>${escapeHTML(lead.title)}</h1></a><p class="dek">${escapeHTML(lead.dek)}</p>${lead.date?`<div class="story-date">${new Date(lead.date+'T12:00:00Z').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</div>`:''}${lead.image?`<a href="${escapeHTML(lead.href)}"><img src="${escapeHTML(lead.image)}" alt="Article illustration"></a>`:''}</section><section class="story-grid">${rest.map(card).join('')}</section>`;
 }
-Promise.all(articles.map(async a=>({...a,date:await firstUploadDate(a.href)}))).then(items=>{
- if(items.some(x=>!x.date)){render(articles,false);return;}
- items.sort((a,b)=>Date.parse(b.date)-Date.parse(a.date));render(items,true);
-}).catch(()=>render(articles,false));
-</script></body></html>
+
+// Dates are stored locally so the featured story does not depend on GitHub API access.
+// Undated existing stories retain their original relative order.
+const sorted=articles.map((a,i)=>({...a,originalOrder:i})).sort((a,b)=>{
+ if(a.date&&b.date)return b.date.localeCompare(a.date);
+ if(a.date)return -1;
+ if(b.date)return 1;
+ return a.originalOrder-b.originalOrder;
+});
+render(sorted);
+</script>
+</body>
+</html>
