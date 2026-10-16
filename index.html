@@ -27,7 +27,7 @@ function render(sorted, verified){
  const root=document.getElementById('news');
  if(!verified){root.innerHTML=`<div class="status">Publication dates could not be verified from GitHub. Showing all articles without claiming which is newest.</div><section class="story-grid">${sorted.map(card).join('')}</section>`;return;}
  const [lead,...rest]=sorted;
- root.innerHTML=`<section class="story-lead"><div class="kicker">Latest story · ${escapeHTML(lead.category)}</div><a href="${escapeHTML(lead.href)}"><h1>${escapeHTML(lead.title)}</h1></a><p class="dek">${escapeHTML(lead.dek)}</p>${lead.image?`<a href="${escapeHTML(lead.href)}"><img src="${escapeHTML(lead.image)}" alt="Article illustration"></a>`:''}</section><section class="story-grid">${rest.map(card).join('')}</section>`;
+ root.innerHTML=`<section class="story-lead"><div class="kicker">Latest story · ${escapeHTML(lead.category)}</div><a href="${escapeHTML(lead.href)}"><h1>${escapeHTML(lead.title)}</h1></a><p class="dek">${escapeHTML(lead.dek)}</p><div class="story-date">${new Date(lead.date).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</div>${lead.image?`<a href="${escapeHTML(lead.href)}"><img src="${escapeHTML(lead.image)}" alt="Article illustration"></a>`:''}</section><section class="story-grid">${rest.map(card).join('')}</section>`;
 }
 Promise.all(articles.map(async a=>({...a,date:await firstUploadDate(a.href)}))).then(items=>{
  if(items.some(x=>!x.date)){render(articles,false);return;}
