@@ -1,111 +1,813 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Banana Times</title><style>
-:root{--ink:#151515;--muted:#666;--paper:#faf9f5;--rule:#bbb;--accent:#8b1e1e}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}.wrap{max-width:1180px;margin:auto;padding:0 24px}.top{font:12px Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;text-align:center;padding:10px;border-bottom:1px solid #ddd}header{text-align:center;padding:25px 0 14px}.brand{font-size:clamp(42px,7vw,78px);font-weight:900;letter-spacing:-.055em}.brand a{color:inherit;text-decoration:none}.banana{font-size:.22em;vertical-align:middle;margin-right:.35em;display:inline-block;transform:scaleX(.55) rotate(-28deg);border-radius:70% 30% 70% 30%}.tag{font-style:italic;color:var(--muted);margin-top:4px}nav{border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);display:flex;justify-content:center;gap:28px;padding:10px;flex-wrap:wrap;font:700 12px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}nav a{color:inherit;text-decoration:none}.date{font:12px Arial,sans-serif;color:var(--muted);padding:16px 0;border-bottom:1px solid #ccc}.kicker{font:700 12px Arial,sans-serif;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;padding:32px 0;border-bottom:3px solid var(--ink)}h1{font-size:clamp(38px,5vw,65px);line-height:.98;letter-spacing:-.035em;margin:10px 0 16px}.dek{font-size:20px;line-height:1.45;color:#444}.byline{font:12px Arial,sans-serif;margin-top:22px;text-transform:uppercase}.hero img{width:100%;display:block}.caption{font:11px Arial,sans-serif;color:#666;margin-top:7px;line-height:1.4}.grid{display:grid;grid-template-columns:repeat(2,1fr);padding:28px 0}.card{padding:24px 30px;border-right:1px solid #bbb;border-bottom:1px solid #bbb}.card:nth-child(-n+2){padding-top:0}.card:nth-child(odd){padding-left:0}.card:nth-child(even){padding-right:0;border-right:0}.card:nth-last-child(-n+2){padding-bottom:0;border-bottom:0}.card:last-child:nth-child(odd){grid-column:1/-1;border-right:0;padding-left:0;padding-right:0}.card h2{font-size:27px;line-height:1.08;margin:8px 0}.card p{color:#555;line-height:1.45}.card a,.hero a{color:inherit;text-decoration:none}.article{max-width:780px;margin:38px auto 80px}.article h1{font-size:clamp(42px,6vw,70px)}.article .dek{font-size:22px}.article figure{margin:32px 0}.article figure img{width:100%;display:block}.article-body{font-size:20px;line-height:1.68}.article-body p{margin:0 0 1.25em}.dateline{font-weight:bold;font-size:.88em;letter-spacing:.02em}blockquote{font-size:27px;line-height:1.3;margin:35px 0;padding-left:24px;border-left:4px solid #222}footer{border-top:3px solid var(--ink);padding:30px 0 50px;text-align:center;font:12px Arial,sans-serif;color:#666}@media(max-width:760px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card,.card:nth-child(odd),.card:nth-child(even),.card:nth-child(-n+2),.card:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #bbb;padding:18px 0}.card:last-child{border-bottom:0}.article-body{font-size:18px}}
 
-.story-lead{border-bottom:3px solid var(--ink);padding:30px 0 34px}.story-lead h1{font-size:clamp(36px,5vw,64px);max-width:950px}.story-lead .dek{max-width:850px}.story-lead img{max-width:600px;width:100%;height:auto;margin-top:18px}.story-lead a,.story-grid a{color:inherit;text-decoration:none}.story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:22px 0 38px}.story-card{padding:22px 20px;border-right:1px solid #bbb;border-bottom:1px solid #bbb}.story-card:nth-child(3n+1){padding-left:0}.story-card:nth-child(3n){border-right:0}.story-card h2{font-size:25px;line-height:1.13;margin:9px 0}.story-card p{line-height:1.45;color:#555}.story-date{font:12px Arial,sans-serif;color:#777;margin-top:10px}.status{padding:20px 0;font:13px Arial,sans-serif;color:#555}@media(max-width:760px){.story-grid{grid-template-columns:1fr}.story-card,.story-card:nth-child(3n+1){padding:18px 0;border-right:0}.story-lead{padding:24px 0}}
-nav a[aria-current="page"]{color:var(--accent);text-decoration:underline;text-underline-offset:5px}
-.empty-category{padding:35px 0 55px;font-size:19px;color:var(--muted)}
-</style></head><body><div class="top">SATIRE · All stories on this site are fictional</div><div class="wrap"><header><div class="brand"><a href="index.html"><span class="banana">●</span> The Banana Times</a></div><div class="tag">Independent. Serious. Mostly.</div></header><nav aria-label="Sections">
-<a href="index.html" data-category="All">All</a>
-<a href="?category=india" data-category="India">India</a>
-<a href="?category=world" data-category="World">World</a>
-<a href="?category=business" data-category="Business">Business</a>
-<a href="?category=technology" data-category="Technology">Technology</a>
-<a href="?category=culture" data-category="Culture">Culture</a>
-<a href="?category=opinion" data-category="Opinion">Opinion</a>
-</nav><div class="date">The Banana Times · Latest stories</div><main id="news"><div class="status">Loading stories…</div></main><footer><strong>The Banana Times</strong><p>This is a fictional satire publication. Names and stories are invented for comedic purposes.</p>© 2026 The Banana Times · EST. 2026</footer></div><script>
-const articles = [
-  {
-    "href": "bus-rooftop-seating.html",
-    "date": "2026-10-16",
-    "title": "Bus Manufacturer Introduces Rooftop Seating After Railways Reinforce Train Roofs for Passengers",
-    "category": "India · Transport",
-    "dek": "A bus manufacturer promises rooftop seats and safety belts, as an influencer celebrates progress without the expense of more buses or wider roads.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Bus_with_Passengers_-_Indian_National_Highway_34_-_Nakashipara_-_Nadia_2013-03-23_7099.JPG"
-  },
-  {
-    "href": "madhya-pradesh-river-cleaning-with-image.html",
-    "date": "2026-10-14",
-    "title": "Residents Seek Government Recognition for ‘Efficient’ River-Cleaning System",
-    "category": "India",
-    "dek": "Residents say a volunteer’s eight-month cleanup has created an efficient arrangement: they provide the garbage, and he provides the cleaning.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Plastic_waste_in_river.jpg"
-  },
-  {
-    "href": "mehta-ai-photo.html",
-    "title": "Man Sues AI Company Over Dispute About His Appearance in 1980",
-    "category": "Technology",
-    "dek": "Raghav Mehta says an AI reconstruction made him less handsome than he remembers. The photographic evidence has complicated the case.",
-    "image": "mehta_ai_vs_original.png"
-  },
-  {
-    "href": "police-running-test-banana-times.html",
-    "title": "Police Physical Test Updated After Viral Van-Key Incident",
-    "category": "India",
-    "dek": "New training standards will require recruits to chase an instructor who grabs a police van key, with a viral incident providing the minimum running-speed benchmark."
-  },
-  {
-    "href": "ai-durga-pandal-conflicting-prayers.html",
-    "title": "AI Durga Pandal Faces First Crisis After Family Makes Conflicting Prayers",
-    "category": "Culture",
-    "dek": "A mother wants her son to get a permanent government job in Kolkata. His wife wants him transferred as far away as possible."
-  },
-  {
-    "href": "bengaluru-spacetime-traffic.html",
-    "title": "Scientists Investigate Whether Bengaluru Traffic Has Distorted Space-Time",
-    "category": "India",
-    "dek": "Researchers say ordinary congestion may no longer be enough to explain why a short trip can consume an alarming portion of the day."
-  },
-  {
-    "href": "hyderabad-midnight-birthday-investigation.html",
-    "title": "Forensic Team Called After Suspected Midnight Birthday Celebration on Tank Bund",
-    "category": "India",
-    "dek": "Police examine fingerprints, DNA and CCTV footage as an apparently routine birthday cake becomes the focus of an unusually serious investigation."
-  },
-  {
-    "href": "delhi-samosa-eligibility-protest.html",
-    "title": "Detainees Protest After Delhi Police Introduces Strict Samosa Eligibility Rules",
-    "category": "India",
-    "dek": "A dispute over who qualified for a samosa after detention has expanded into demands for transparent eligibility rules — and questions about what the samosa actually certifies."
-  }
-];
-const categories = ['All','India','World','Business','Technology','Culture','Opinion'];
-const escapeHTML = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-// Existing category labels can contain subcategories, e.g. "India · Transport".
-// Future articles may instead specify categories: ["India", "Technology"].
-function tags(a){
-  return [...new Set([
-    ...(Array.isArray(a.categories) ? a.categories : []),
-    ...String(a.category || '').split('·').map(x=>x.trim())
-  ].filter(Boolean))];
-}
-function displayDate(a){
- return a.date ? `<div class="story-date">${new Date(a.date+'T12:00:00Z').toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'})}</div>` : '';
-}
-function card(a){
- return `<article class="story-card"><div class="kicker">${escapeHTML(a.category || tags(a).join(' · '))}</div><a href="${escapeHTML(a.href)}"><h2>${escapeHTML(a.title)}</h2></a><p>${escapeHTML(a.dek)}</p>${displayDate(a)}</article>`;
-}
-const sorted = articles.map((a,i)=>({...a,originalOrder:i})).sort((a,b)=>{
- if(a.date && b.date)return b.date.localeCompare(a.date);
- if(a.date)return -1;
- if(b.date)return 1;
- return a.originalOrder-b.originalOrder;
-});
-function render(category){
- const filtered = category==='All' ? sorted : sorted.filter(a=>tags(a).some(t=>t.toLowerCase()===category.toLowerCase()));
- const root=document.getElementById('news');
- document.querySelector('.date').textContent='The Banana Times · '+(category==='All'?'Latest stories':category);
- document.querySelectorAll('nav a[data-category]').forEach(link=>{
-   if(link.dataset.category===category)link.setAttribute('aria-current','page');
-   else link.removeAttribute('aria-current');
- });
- if(!filtered.length){
-   root.innerHTML='<div class="empty-category">No stories in this section yet. <a href="index.html">View all stories</a>.</div>';
-   return;
- }
- const [lead,...rest]=filtered;
- root.innerHTML=`<section class="story-lead"><div class="kicker">${category==='All'?'Latest story':'Latest in '+escapeHTML(category)} · ${escapeHTML(lead.category || tags(lead).join(' · '))}</div><a href="${escapeHTML(lead.href)}"><h1>${escapeHTML(lead.title)}</h1></a><p class="dek">${escapeHTML(lead.dek)}</p>${displayDate(lead)}${lead.image?`<a href="${escapeHTML(lead.href)}"><img src="${escapeHTML(lead.image)}" alt="Article illustration"></a>`:''}</section><section class="story-grid">${rest.map(card).join('')}</section>`;
-}
-const requested=new URLSearchParams(window.location.search).get('category') || 'All';
-render(categories.find(x=>x.toLowerCase()===requested.toLowerCase()) || 'All');
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- =====================================
+       SECTION 1: WEBSITE INFORMATION
+       ===================================== -->
+
+  <title>The Banana Times</title>
+
+  <style>
+
+    /* =====================================
+       SECTION 2: WEBSITE DESIGN
+       ===================================== */
+
+    /* Change these colors to customize the site */
+
+    :root {
+      --ink: #151515;       /* Main text color */
+      --muted: #666666;     /* Secondary text */
+      --paper: #faf9f5;     /* Background */
+      --accent: #8b1e1e;    /* Category headline color */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    /* Top disclaimer */
+
+    .top {
+      font: 12px Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Newspaper logo */
+
+    header {
+      text-align: center;
+      padding: 25px 0 14px;
+    }
+
+    .brand {
+      font-size: clamp(42px, 7vw, 78px);
+      font-weight: 900;
+      letter-spacing: -0.055em;
+    }
+
+    .brand a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .banana {
+      font-size: 0.22em;
+      vertical-align: middle;
+      margin-right: 0.35em;
+      display: inline-block;
+      transform: scaleX(.55) rotate(-28deg);
+      border-radius: 70% 30% 70% 30%;
+    }
+
+    .tag {
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Navigation tabs */
+
+    nav {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 10px;
+      font: 700 12px Arial, sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    .date {
+      font: 12px Arial, sans-serif;
+      color: var(--muted);
+      padding: 16px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Main featured article */
+
+    .story-lead {
+      border-bottom: 3px solid var(--ink);
+      padding: 30px 0 34px;
+    }
+
+    .story-lead h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      max-width: 950px;
+      margin: 10px 0 16px;
+    }
+
+    .story-lead .dek {
+      font-size: 20px;
+      line-height: 1.45;
+      color: #444;
+      max-width: 850px;
+    }
+
+    .story-lead img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      margin-top: 18px;
+    }
+
+    .story-lead a,
+    .story-grid a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Category labels */
+
+    .kicker {
+      font: 700 12px Arial, sans-serif;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* Smaller articles */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding: 22px 0 38px;
+    }
+
+    .story-card {
+      padding: 22px 20px;
+      border-right: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+    }
+
+    .story-card:nth-child(3n+1) {
+      padding-left: 0;
+    }
+
+    .story-card:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .story-card h2 {
+      font-size: 25px;
+      line-height: 1.13;
+      margin: 9px 0;
+    }
+
+    .story-card p {
+      line-height: 1.45;
+      color: #555;
+    }
+
+    .story-date {
+      font: 12px Arial, sans-serif;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    .empty-category {
+      padding: 35px 0 55px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    /* Individual article formatting */
+
+    .article {
+      max-width: 780px;
+      margin: 38px auto 80px;
+    }
+
+    .article h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 0.98;
+    }
+
+    .article .dek {
+      font-size: 22px;
+    }
+
+    .article figure {
+      margin: 32px 0;
+    }
+
+    .article figure img {
+      width: 100%;
+      display: block;
+    }
+
+    .article-body {
+      font-size: 20px;
+      line-height: 1.68;
+    }
+
+    .article-body p {
+      margin: 0 0 1.25em;
+    }
+
+    .dateline {
+      font-weight: bold;
+      font-size: 0.88em;
+      letter-spacing: 0.02em;
+    }
+
+    blockquote {
+      font-size: 27px;
+      line-height: 1.3;
+      margin: 35px 0;
+      padding-left: 24px;
+      border-left: 4px solid #222;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 3px solid var(--ink);
+      padding: 30px 0 50px;
+      text-align: center;
+      font: 12px Arial, sans-serif;
+      color: #666;
+    }
+
+    /* Mobile phone layout */
+
+    @media (max-width: 760px) {
+
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-card,
+      .story-card:nth-child(3n+1) {
+        padding: 18px 0;
+        border-right: 0;
+      }
+
+      .story-lead {
+        padding: 24px 0;
+      }
+
+      .article-body {
+        font-size: 18px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =====================================
+       SECTION 3: VISIBLE WEBSITE HEADER
+       ===================================== -->
+
+  <div class="top">
+    SATIRE · All stories on this site are fictional
+  </div>
+
+  <div class="wrap">
+
+    <header>
+
+      <!-- Change website name here -->
+
+      <div class="brand">
+        <a href="index.html">
+          <span class="banana">●</span>
+          The Banana Times
+        </a>
+      </div>
+
+      <!-- Change tagline here -->
+
+      <div class="tag">
+        Independent. Serious. Mostly.
+      </div>
+
+    </header>
+
+
+    <!-- =====================================
+         NAVIGATION MENU
+         ===================================== -->
+
+    <nav aria-label="Sections">
+
+      <a href="index.html" data-category="All">All</a>
+
+      <a href="?category=india" data-category="India">India</a>
+
+      <a href="?category=world" data-category="World">World</a>
+
+      <a href="?category=business" data-category="Business">Business</a>
+
+      <a href="?category=technology" data-category="Technology">Technology</a>
+
+      <a href="?category=culture" data-category="Culture">Culture</a>
+
+      <a href="?category=opinion" data-category="Opinion">Opinion</a>
+
+    </nav>
+
+
+    <!-- Articles will automatically appear here -->
+
+    <div class="date" id="section-title">
+      The Banana Times · Latest stories
+    </div>
+
+    <main id="news"></main>
+
+
+    <!-- =====================================
+         FOOTER
+         ===================================== -->
+
+    <footer>
+
+      <strong>The Banana Times</strong>
+
+      <p>
+        This is a fictional satire publication.
+        Names and stories are invented for comedic purposes.
+      </p>
+
+      © 2026 The Banana Times · EST. 2026
+
+    </footer>
+
+  </div>
+
+
+  <script>
+
+    /* =====================================
+       SECTION 4: EDIT YOUR STORIES HERE
+       =====================================
+
+       HOW TO ADD AN ARTICLE:
+
+       href       = Name of the article's HTML file
+       date       = Publication date (YYYY-MM-DD)
+       title      = Headline
+       categories = One or more navigation categories
+       dek        = Short description on the homepage
+       image      = Image address or filename (optional)
+
+       To add a new story:
+       Copy an existing story block.
+       Paste it inside the articles list.
+       Change its details.
+
+       Do not delete existing stories.
+       ===================================== */
+
+
+    const articles = [
+
+
+      /* =====================================
+         STORY 1: BUS ROOFTOP SEATING
+         ===================================== */
+
+      {
+        href: "bus-rooftop-seating.html",
+
+        date: "2026-10-16",
+
+        title: "Bus Manufacturer Introduces Rooftop Seating After Railways Reinforce Train Roofs for Passengers",
+
+        category: "India · Transport",
+
+        categories: ["India"],
+
+        dek: "A bus manufacturer promises rooftop seats and safety belts, as an influencer celebrates progress without the expense of more buses or wider roads.",
+
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Bus_with_Passengers_-_Indian_National_Highway_34_-_Nakashipara_-_Nadia_2013-03-23_7099.JPG"
+      },
+
+
+      /* =====================================
+         STORY 2: RIVER CLEANING
+         ===================================== */
+
+      {
+        href: "madhya-pradesh-river-cleaning-with-image.html",
+
+        date: "2026-10-14",
+
+        title: "Residents Seek Government Recognition for ‘Efficient’ River-Cleaning System",
+
+        category: "India",
+
+        categories: ["India"],
+
+        dek: "Residents say a volunteer’s eight-month cleanup has created an efficient arrangement: they provide the garbage, and he provides the cleaning.",
+
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Plastic_waste_in_river.jpg"
+      },
+
+
+      /* =====================================
+         STORY 3: AI PHOTOGRAPH LAWSUIT
+         ===================================== */
+
+      {
+        href: "mehta-ai-photo.html",
+
+        title: "Man Sues AI Company Over Dispute About His Appearance in 1980",
+
+        category: "Technology",
+
+        categories: ["Technology"],
+
+        dek: "Raghav Mehta says an AI reconstruction made him less handsome than he remembers. The photographic evidence has complicated the case.",
+
+        image: "mehta_ai_vs_original.png"
+      },
+
+
+      /* =====================================
+         STORY 4: POLICE RUNNING TEST
+         ===================================== */
+
+      {
+        href: "police-running-test-banana-times.html",
+
+        title: "Police Physical Test Updated After Viral Van-Key Incident",
+
+        category: "India",
+
+        categories: ["India"],
+
+        dek: "New training standards will require recruits to chase an instructor who grabs a police van key, with a viral incident providing the minimum running-speed benchmark."
+      },
+
+
+      /* =====================================
+         STORY 5: AI DURGA PANDAL
+         ===================================== */
+
+      {
+        href: "ai-durga-pandal-conflicting-prayers.html",
+
+        title: "AI Durga Pandal Faces First Crisis After Family Makes Conflicting Prayers",
+
+        category: "Culture",
+
+        categories: ["Culture"],
+
+        dek: "A mother wants her son to get a permanent government job in Kolkata. His wife wants him transferred as far away as possible."
+      },
+
+
+      /* =====================================
+         STORY 6: BENGALURU TRAFFIC
+         ===================================== */
+
+      {
+        href: "bengaluru-spacetime-traffic.html",
+
+        title: "Scientists Investigate Whether Bengaluru Traffic Has Distorted Space-Time",
+
+        category: "India",
+
+        categories: ["India"],
+
+        dek: "Researchers say ordinary congestion may no longer be enough to explain why a short trip can consume an alarming portion of the day."
+      },
+
+
+      /* =====================================
+         STORY 7: HYDERABAD BIRTHDAY
+         ===================================== */
+
+      {
+        href: "hyderabad-midnight-birthday-investigation.html",
+
+        title: "Forensic Team Called After Suspected Midnight Birthday Celebration on Tank Bund",
+
+        category: "India",
+
+        categories: ["India"],
+
+        dek: "Police examine fingerprints, DNA and CCTV footage as an apparently routine birthday cake becomes the focus of an unusually serious investigation."
+      },
+
+
+      /* =====================================
+         STORY 8: DELHI SAMOSA PROTEST
+         ===================================== */
+
+      {
+        href: "delhi-samosa-eligibility-protest.html",
+
+        title: "Detainees Protest After Delhi Police Introduces Strict Samosa Eligibility Rules",
+
+        category: "India",
+
+        categories: ["India"],
+
+        dek: "A dispute over who qualified for a samosa after detention has expanded into demands for transparent eligibility rules — and questions about what the samosa actually certifies."
+      }
+
+
+    ];  // END OF ARTICLES
+
+
+    /* =====================================
+       SECTION 5: AUTOMATIC FUNCTIONS
+
+       You normally do not need to edit
+       anything below this line.
+       ===================================== */
+
+
+    // Available website sections
+
+    const sections = [
+      "All",
+      "India",
+      "World",
+      "Business",
+      "Technology",
+      "Culture",
+      "Opinion"
+    ];
+
+
+    // Make inserted text safe for HTML
+
+    function escapeHTML(value) {
+      return String(value).replace(
+        /[&<>"']/g,
+        char => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        }[char])
+      );
+    }
+
+
+    // Read the category tags attached to an article
+
+    function getCategories(article) {
+
+      const tags = Array.isArray(article.categories)
+        ? article.categories
+        : [];
+
+      const legacyTags = String(article.category || "")
+        .split("·")
+        .map(tag => tag.trim());
+
+      return [...new Set([...tags, ...legacyTags])];
+    }
+
+
+    // Format an article's publication date
+
+    function showDate(article) {
+
+      if (!article.date) {
+        return "";
+      }
+
+      const formatted = new Date(
+        article.date + "T12:00:00Z"
+      ).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC"
+      });
+
+      return `<div class="story-date">${formatted}</div>`;
+    }
+
+
+    // Create a small article card
+
+    function createCard(article) {
+
+      const label = article.category ||
+        getCategories(article).join(" · ");
+
+      return `
+        <article class="story-card">
+
+          <div class="kicker">
+            ${escapeHTML(label)}
+          </div>
+
+          <a href="${escapeHTML(article.href)}">
+            <h2>${escapeHTML(article.title)}</h2>
+          </a>
+
+          <p>${escapeHTML(article.dek)}</p>
+
+          ${showDate(article)}
+
+        </article>
+      `;
+    }
+
+
+    // Sort dated articles newest first.
+    // Existing undated articles keep their original order.
+
+    const sortedArticles = articles
+      .map((article, index) => ({
+        ...article,
+        originalOrder: index
+      }))
+      .sort((a, b) => {
+
+        if (a.date && b.date) {
+          return b.date.localeCompare(a.date);
+        }
+
+        if (a.date) return -1;
+        if (b.date) return 1;
+
+        return a.originalOrder - b.originalOrder;
+
+      });
+
+
+    // Display articles belonging to the selected section
+
+    function displayArticles(category) {
+
+      const news = document.getElementById("news");
+
+      let selectedArticles;
+
+      if (category === "All") {
+
+        selectedArticles = sortedArticles;
+
+      } else {
+
+        selectedArticles = sortedArticles.filter(article =>
+          getCategories(article).some(tag =>
+            tag.toLowerCase() === category.toLowerCase()
+          )
+        );
+
+      }
+
+
+      // Update section heading
+
+      document.getElementById("section-title").textContent =
+        "The Banana Times · " +
+        (category === "All" ? "Latest stories" : category);
+
+
+      // Highlight selected navigation tab
+
+      document.querySelectorAll("nav a").forEach(link => {
+
+        if (link.dataset.category === category) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+
+      });
+
+
+      // Display a message if there are no articles
+
+      if (selectedArticles.length === 0) {
+
+        news.innerHTML = `
+          <div class="empty-category">
+            No stories in this section yet.
+            <a href="index.html">View all stories</a>.
+          </div>
+        `;
+
+        return;
+      }
+
+
+      // The newest article becomes the main headline
+
+      const [latest, ...otherArticles] = selectedArticles;
+
+      const latestLabel = latest.category ||
+        getCategories(latest).join(" · ");
+
+      const imageHTML = latest.image
+        ? `
+          <a href="${escapeHTML(latest.href)}">
+            <img
+              src="${escapeHTML(latest.image)}"
+              alt="Article illustration">
+          </a>
+        `
+        : "";
+
+
+      // Build the featured story and remaining article grid
+
+      news.innerHTML = `
+
+        <section class="story-lead">
+
+          <div class="kicker">
+            ${category === "All" ? "Latest story" : "Latest in " + escapeHTML(category)}
+            · ${escapeHTML(latestLabel)}
+          </div>
+
+          <a href="${escapeHTML(latest.href)}">
+            <h1>${escapeHTML(latest.title)}</h1>
+          </a>
+
+          <p class="dek">
+            ${escapeHTML(latest.dek)}
+          </p>
+
+          ${showDate(latest)}
+
+          ${imageHTML}
+
+        </section>
+
+
+        <section class="story-grid">
+
+          ${otherArticles.map(createCard).join("")}
+
+        </section>
+
+      `;
+
+    }
+
+
+    // Find out which category the visitor opened
+
+    const url = new URLSearchParams(window.location.search);
+
+    const requestedCategory = url.get("category") || "All";
+
+    const activeCategory = sections.find(section =>
+      section.toLowerCase() === requestedCategory.toLowerCase()
+    ) || "All";
+
+
+    // Finally, display the homepage
+
+    displayArticles(activeCategory);
+
+  </script>
+
+</body>
+</html>
