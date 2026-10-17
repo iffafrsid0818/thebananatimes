@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | The Banana Times</title>
+
+  <!-- Same browser-tab logo as the homepage -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <style>
+    /* SECTION 1: WEBSITE COLORS */
+    :root {
+      --ink: #151515;
+      --muted: #666666;
+      --paper: #faf9f5;
+      --accent: #8b1e1e;
+    }
+
+    /* SECTION 2: SHARED NEWSPAPER DESIGN */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .wrap { max-width: 1180px; margin: auto; padding: 0 24px; }
+    .top {
+      font: 12px Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    header { text-align: center; padding: 25px 0 14px; }
+    .brand { font-size: clamp(42px, 7vw, 78px); font-weight: 900; letter-spacing: -.055em; }
+    .brand a { color: inherit; text-decoration: none; }
+    .tag { font-style: italic; color: var(--muted); margin-top: 4px; }
+
+    /* Same navigation as the homepage, with an About divider */
+    nav {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 10px;
+      font: 700 12px Arial, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    nav a { color: inherit; text-decoration: none; }
+    nav a:hover, nav a[aria-current="page"] {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+    .nav-divider { width: 1px; height: 17px; background: #999; align-self: center; }
+
+    /* SECTION 3: ABOUT PAGE CONTENT */
+    .about { max-width: 740px; margin: 55px auto 90px; }
+    .section-label {
+      font: bold 12px Arial, sans-serif;
+      color: var(--accent);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    h1 {
+      font-size: clamp(48px, 7vw, 76px);
+      text-align: center;
+      letter-spacing: -.04em;
+      margin: 12px 0;
+    }
+    .intro {
+      font-size: 25px;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.4;
+      color: #444;
+      margin-bottom: 38px;
+    }
+    .rule { border: none; border-top: 2px solid var(--ink); margin: 35px 0; }
+    .about h2 { font-size: 30px; letter-spacing: -.02em; margin-top: 40px; }
+    .about p { font-size: 19px; line-height: 1.75; margin-bottom: 24px; }
+    .closing { font-size: 23px; text-align: center; font-style: italic; margin-top: 45px; }
+
+    /* SECTION 4: FOOTER */
+    footer {
+      border-top: 3px solid var(--ink);
+      padding: 30px 0 50px;
+      text-align: center;
+      font: 12px Arial, sans-serif;
+      color: var(--muted);
+    }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 760px) {
+      .about { margin: 35px auto 60px; }
+      .about p { font-size: 18px; }
+      .intro { font-size: 21px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">SATIRE · All stories on this site are fictional</div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand"><a href="index.html">The Banana Times</a></div>
+      <div class="tag">Independent. Serious. Mostly.</div>
+    </header>
+
+    <!-- NAVIGATION: About Us is separated from the news sections -->
+    <nav aria-label="Sections">
+      <a href="index.html">All</a>
+      <a href="index.html?category=india">India</a>
+      <a href="index.html?category=world">World</a>
+      <a href="index.html?category=business">Business</a>
+      <a href="index.html?category=technology">Technology</a>
+      <a href="index.html?category=culture">Culture</a>
+      <a href="index.html?category=opinion">Opinion</a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a href="about.html" aria-current="page">About Us</a>
+    </nav>
+
+    <!-- EDIT THE ABOUT PAGE TEXT BELOW -->
+    <main class="about">
+      <div class="section-label">The Publication</div>
+      <h1>About Us</h1>
+      <div class="intro">Journalism, Without the Inconvenience of Reality.</div>
+      <hr class="rule">
+
+      <p>The Banana Times is an independent satirical publication dedicated to reporting on a world that frequently makes satire unnecessary.</p>
+
+      <p>We cover politics, technology, business, culture, and the everyday absurdities of modern life with the gravity normally reserved for matters of national importance.</p>
+
+      <p>Our stories are fictional. Our observations are not always.</p>
+
+      <h2>Our Editorial Philosophy</h2>
+
+      <p>We believe every story deserves careful consideration, particularly those that should never have been stories in the first place.</p>
+
+      <p>Our editorial approach combines the discipline of traditional journalism with a willingness to examine the ridiculous.</p>
+
+      <p>We maintain high standards of fictional reporting and reserve the right to be deeply concerned about things that do not exist.</p>
+
+      <h2>A Note to Readers</h2>
+
+      <p>The Banana Times publishes satire. Its articles are fictional works created for humor, commentary, and entertainment.</p>
+
+      <p>References to real events, institutions, or public figures should be understood within this satirical context.</p>
+
+      <p>Nothing published here should be mistaken for factual news reporting.</p>
+
+      <hr class="rule">
+      <div class="closing">The Banana Times. Independent. Serious. Mostly.</div>
+    </main>
+
+    <footer>
+      <strong>The Banana Times</strong>
+      <p><a href="index.html">Home</a> · <a href="about.html">About Us</a></p>
+      <p>This is a fictional satire publication. Names and stories are invented for comedic purposes.</p>
+      © 2026 The Banana Times · EST. 2026
+    </footer>
+  </div>
+</body>
+</html>
