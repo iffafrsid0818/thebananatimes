@@ -454,26 +454,19 @@
       }
     }
 
-    /* Box the stories below the existing featured row.
-       Borders only: keep the current layout and spacing. */
+    /* Individually outlined stories below the featured box. */
     .story-grid > .story-card:nth-child(n+3) {
       border: 1px solid #151515;
+      margin: 6px;
+      padding: 16px;
     }
 
-    /* Adjacent boxes share one line, rather than a double-thick edge. */
-    .story-grid > .story-card:nth-child(even):nth-child(n+3) {
-      border-left: 0;
-    }
-    .story-grid > .story-card:nth-child(n+5) {
-      border-top: 0;
-    }
-
+    /* Preserve visible individual borders when stories stack on mobile. */
     @media (max-width: 620px) {
       .story-grid > .story-card:nth-child(n+3) {
         border: 1px solid #151515;
-      }
-      .story-grid > .story-card:nth-child(n+4) {
-        border-top: 0;
+        margin: 6px 0;
+        padding: 16px;
       }
     }
 
