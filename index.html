@@ -470,6 +470,59 @@
       }
     }
 
+    /* Category boxes below the two featured stories. */
+    .category-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 12px 0 38px;
+    }
+    .category-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+    .category-panel {
+      min-width: 0;
+      border: 1px solid #151515;
+      padding: 16px;
+    }
+    .category-panel-heading {
+      font: 700 12px Arial, sans-serif;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #bbb;
+    }
+    .category-panel > .story-card,
+    .category-panel > .story-card:nth-child(3n+1),
+    .category-panel > .story-card:nth-child(3n),
+    .category-panel > .story-card:nth-child(even),
+    .category-panel > .story-card:nth-last-child(-n+2),
+    .category-panel > .story-card:last-child:nth-child(odd) {
+      display: block;
+      border: 0;
+      border-bottom: 1px solid #bbb;
+      padding: 14px 0;
+      margin: 0;
+    }
+    .category-panel > .story-card:last-child,
+    .category-panel > .story-card:last-child:nth-child(odd) {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .category-panel > .story-card .kicker {
+      display: none;
+    }
+    @media (max-width: 620px) {
+      .category-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
   </style>
 </head>
 
@@ -890,6 +943,15 @@
       });
 
 
+    // Build one bordered category box with all its stories.
+    function categoryPanel(name, stories) {
+      if (stories.length === 0) return "";
+      return `<section class="category-panel">
+        <div class="category-panel-heading">${escapeHTML(name)}</div>
+        ${stories.map(article => createCard(article)).join("")}
+      </section>`;
+    }
+
     // Display articles belonging to the selected section
 
     function displayArticles(category) {
@@ -948,15 +1010,62 @@
       }
 
 
-      // Each story now uses the same card size and layout.
-      // The newest story stays first and retains its Latest story label.
-      news.innerHTML = `
-        <section class="story-grid">
-          ${selectedArticles.map((article, index) =>
-            createCard(article, index === 0, index < 2)
-          ).join("")}
-        </section>
-      `;
+      // Keep the two most recent stories in the existing featured box.
+      // On the homepage, arrange all remaining stories in category boxes.
+      if (category === "All") {
+        const featured = selectedArticles.slice(0, 2);
+        const remaining = selectedArticles.slice(2);
+        const hasCategory = (article, name) =>
+          getCategories(article).some(tag =>
+            tag.toLowerCase() === name.toLowerCase()
+          );
+
+        const indiaStories = remaining.filter(a => hasCategory(a, "India"));
+        const otherCategories = sections
+          .filter(name => name !== "All" && name !== "India")
+          .map(name => ({
+            name,
+            stories: remaining.filter(a => hasCategory(a, name))
+          }))
+          .filter(group => group.stories.length > 0);
+
+        // Preserve any uncategorized stories instead of omitting them.
+        const accountedFor = new Set([
+          ...indiaStories,
+          ...otherCategories.flatMap(group => group.stories)
+        ]);
+        const uncategorized = remaining.filter(a => !accountedFor.has(a));
+        if (uncategorized.length) {
+          otherCategories.push({ name: "Other", stories: uncategorized });
+        }
+
+        news.innerHTML = `
+          <section class="story-grid">
+            ${featured.map((article, index) =>
+              createCard(article, index === 0, true)
+            ).join("")}
+          </section>
+          <div class="category-columns">
+            <div class="category-stack">
+              ${categoryPanel("India", indiaStories)}
+            </div>
+            <div class="category-stack">
+              ${otherCategories.map(group =>
+                categoryPanel(group.name, group.stories)
+              ).join("")}
+            </div>
+          </div>
+        `;
+      } else {
+        // Category navigation retains its existing story ordering.
+        news.innerHTML = `
+          <section class="story-grid">
+            ${selectedArticles.map((article, index) =>
+              createCard(article, index === 0, index < 2)
+            ).join("")}
+          </section>
+        `;
+      }
 
     }
 
