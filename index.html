@@ -773,20 +773,22 @@
 
     // Create a small article card
 
-    function createCard(article, isLatest = false) {
+    function createCard(article, isLatest = false, showImage = false) {
 
       const label = article.category ||
         getCategories(article).join(" · ");
 
-      // Use existing story artwork only; do not create replacement images.
-      const imageHTML = article.image
+      // Show an image only for the first two displayed stories.
+      // Leave all image URLs in the article data unchanged.
+      const hasImage = showImage && Boolean(article.image);
+      const imageHTML = hasImage
         ? `<a class="story-image" href="${escapeHTML(article.href)}">
              <img src="${escapeHTML(article.image)}" alt="Article illustration" loading="lazy">
            </a>`
         : "";
 
       return `
-        <article class="story-card ${article.image ? "with-image" : "text-only"}">
+        <article class="story-card ${hasImage ? "with-image" : "text-only"}">
 
           ${imageHTML}
 
@@ -894,7 +896,7 @@
       news.innerHTML = `
         <section class="story-grid">
           ${selectedArticles.map((article, index) =>
-            createCard(article, index === 0)
+            createCard(article, index === 0, index < 2)
           ).join("")}
         </section>
       `;
