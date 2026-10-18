@@ -307,6 +307,105 @@
       }
     }
 
+
+    /* =====================================
+       HOMEPAGE LAYOUT: TWO STORIES PER ROW
+       Keeps the existing typography and colors.
+       ===================================== */
+
+    #news {
+      max-width: 1010px;
+      margin: 0 auto;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding: 16px 0 38px;
+    }
+
+    .story-card,
+    .story-card:nth-child(3n+1),
+    .story-card:nth-child(3n) {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-content: start;
+      padding: 16px 16px 16px 0;
+      border-right: 0;
+      border-bottom: 1px solid #bbb;
+    }
+
+    .story-card:nth-child(even) {
+      border-left: 1px solid #bbb;
+      padding-left: 16px;
+      padding-right: 0;
+    }
+
+    .story-card:nth-last-child(-n+2) {
+      border-bottom: 0;
+    }
+
+    .story-card:last-child:nth-child(odd) {
+      border-bottom: 0;
+    }
+
+    .story-card.with-image {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .story-card .story-image {
+      display: block;
+      min-width: 0;
+    }
+
+    .story-card .story-image img {
+      width: 100%;
+      aspect-ratio: 4 / 4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-card .story-copy {
+      min-width: 0;
+    }
+
+    .story-card .story-date {
+      margin-top: 16px;
+    }
+
+    /* Stack image and text on narrower screens. */
+    @media (max-width: 900px) {
+      .story-card.with-image {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+      }
+      .story-card .story-image img {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+      .story-card,
+      .story-card:nth-child(3n+1),
+      .story-card:nth-child(3n),
+      .story-card:nth-child(even),
+      .story-card:nth-last-child(-n+2),
+      .story-card:last-child:nth-child(odd) {
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 1px solid #bbb;
+        padding: 18px 0;
+      }
+      .story-card:last-child {
+        border-bottom: 0;
+      }
+    }
+
   </style>
 </head>
 
@@ -667,32 +766,43 @@
 
     // Create a small article card
 
-    function createCard(article) {
+    function createCard(article, isLatest = false) {
 
       const label = article.category ||
         getCategories(article).join(" · ");
 
+      // Use existing story artwork only; do not create replacement images.
+      const imageHTML = article.image
+        ? `<a class="story-image" href="${escapeHTML(article.href)}">
+             <img src="${escapeHTML(article.image)}" alt="Article illustration" loading="lazy">
+           </a>`
+        : "";
+
       return `
-        <article class="story-card">
+        <article class="story-card ${article.image ? "with-image" : "text-only"}">
 
-          <div class="kicker">
-            ${escapeHTML(label)}
+          ${imageHTML}
+
+          <div class="story-copy">
+            <div class="kicker">
+              ${isLatest ? "Latest story · " : ""}${escapeHTML(label)}
+            </div>
+
+            <a href="${escapeHTML(article.href)}">
+              <h2>${escapeHTML(article.title)}</h2>
+            </a>
+
+            <p>${escapeHTML(article.dek)}</p>
+
+            ${showDate(article)}
           </div>
-
-          <a href="${escapeHTML(article.href)}">
-            <h2>${escapeHTML(article.title)}</h2>
-          </a>
-
-          <p>${escapeHTML(article.dek)}</p>
-
-          ${showDate(article)}
 
         </article>
       `;
     }
 
 
-    // Sort dated articles newest first.
+        // Sort dated articles newest first.
     // Existing undated articles keep their original order.
 
     const sortedArticles = articles
@@ -772,56 +882,14 @@
       }
 
 
-      // The newest article becomes the main headline
-
-      const [latest, ...otherArticles] = selectedArticles;
-
-      const latestLabel = latest.category ||
-        getCategories(latest).join(" · ");
-
-      const imageHTML = latest.image
-        ? `
-          <a href="${escapeHTML(latest.href)}">
-            <img
-              src="${escapeHTML(latest.image)}"
-              alt="Article illustration">
-          </a>
-        `
-        : "";
-
-
-      // Build the featured story and remaining article grid
-
+      // Each story now uses the same card size and layout.
+      // The newest story stays first and retains its Latest story label.
       news.innerHTML = `
-
-        <section class="story-lead">
-
-          <div class="kicker">
-            ${category === "All" ? "Latest story" : "Latest in " + escapeHTML(category)}
-            · ${escapeHTML(latestLabel)}
-          </div>
-
-          <a href="${escapeHTML(latest.href)}">
-            <h1>${escapeHTML(latest.title)}</h1>
-          </a>
-
-          <p class="dek">
-            ${escapeHTML(latest.dek)}
-          </p>
-
-          ${showDate(latest)}
-
-          ${imageHTML}
-
-        </section>
-
-
         <section class="story-grid">
-
-          ${otherArticles.map(createCard).join("")}
-
+          ${selectedArticles.map((article, index) =>
+            createCard(article, index === 0)
+          ).join("")}
         </section>
-
       `;
 
     }
