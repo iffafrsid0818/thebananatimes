@@ -1035,13 +1035,28 @@
           </div>
         `;
       } else {
-        // Category navigation retains its existing story ordering.
+        // Keep the first two stories in the featured box.
+        // Place remaining stories in two continuous column boxes,
+        // rather than outlining each story individually.
+        const featured = selectedArticles.slice(0, 2);
+        const remaining = selectedArticles.slice(2);
+        const leftColumn = remaining.filter((article, index) => index % 2 === 0);
+        const rightColumn = remaining.filter((article, index) => index % 2 === 1);
+
         news.innerHTML = `
           <section class="story-grid">
-            ${selectedArticles.map((article, index) =>
-              createCard(article, false, index < 2)
-            ).join("")}
+            ${featured.map(article => createCard(article, false, true)).join("")}
           </section>
+          ${remaining.length ? `
+            <div class="category-columns">
+              <div class="category-stack">
+                ${categoryPanel(category, leftColumn)}
+              </div>
+              <div class="category-stack">
+                ${categoryPanel(category, rightColumn)}
+              </div>
+            </div>
+          ` : ""}
         `;
       }
 
