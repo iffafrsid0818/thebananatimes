@@ -127,13 +127,6 @@
       align-self: center;
     }
 
-    .date {
-      font: 12px Arial, sans-serif;
-      color: var(--muted);
-      padding: 16px 0;
-      border-bottom: 1px solid #ccc;
-    }
-
     /* Main featured article */
 
     .story-lead {
@@ -594,10 +587,6 @@
 
     <!-- Articles will automatically appear here -->
 
-    <div class="date" id="section-title">
-      The Banana Times · Latest stories
-    </div>
-
     <main id="news"></main>
 
 
@@ -979,13 +968,6 @@
         );
 
       }
-
-
-      // Update section heading
-
-      document.getElementById("section-title").textContent =
-        "The Banana Times · " +
-        (category === "All" ? "Latest stories" : category);
 
 
       // Highlight selected navigation tab
