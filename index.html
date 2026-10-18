@@ -643,7 +643,7 @@
 
         title: "Bus Manufacturer Introduces Rooftop Seating After Railways Reinforce Train Roofs for Passengers",
 
-        category: "India · Transport",
+        category: "India",
 
         categories: ["India"],
 
@@ -840,9 +840,7 @@
         ? article.categories
         : [];
 
-      const legacyTags = String(article.category || "")
-        .split("·")
-        .map(tag => tag.trim());
+      const legacyTags = article.category ? [String(article.category).trim()] : [];
 
       return [...new Set([...tags, ...legacyTags])];
     }
@@ -892,7 +890,7 @@
 
           <div class="story-copy">
             <div class="kicker">
-              ${isLatest ? "Latest story · " : ""}${escapeHTML(label)}
+              ${escapeHTML(label)}
             </div>
 
             <a href="${escapeHTML(article.href)}">
@@ -1022,7 +1020,7 @@
         news.innerHTML = `
           <section class="story-grid">
             ${featured.map((article, index) =>
-              createCard(article, index === 0, true)
+              createCard(article, false, true)
             ).join("")}
           </section>
           <div class="category-columns">
@@ -1041,7 +1039,7 @@
         news.innerHTML = `
           <section class="story-grid">
             ${selectedArticles.map((article, index) =>
-              createCard(article, index === 0, index < 2)
+              createCard(article, false, index < 2)
             ).join("")}
           </section>
         `;
