@@ -389,10 +389,23 @@
     }
 
     .story-grid > .story-card:nth-child(2) {
+      position: relative;
       border-top: 1px solid #151515;
       border-bottom: 1px solid #151515;
       border-right: 1px solid #151515;
+      border-left: 0;
       padding: 16px;
+    }
+
+    /* Inset center divider: it stops short of the outer horizontal borders. */
+    .story-grid > .story-card:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 16px;
+      bottom: 16px;
+      border-left: 1px solid #bbb;
+      pointer-events: none;
     }
 
     .story-grid > .story-card:only-child {
@@ -435,6 +448,9 @@
       .story-grid > .story-card:nth-child(2) {
         border: 1px solid #151515;
         padding: 16px;
+      }
+      .story-grid > .story-card:nth-child(2)::before {
+        display: none;
       }
     }
 
