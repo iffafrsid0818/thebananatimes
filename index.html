@@ -673,6 +673,8 @@
         categories: ["Movie"],
         dek: "The central figure in the Drishyam films has repeatedly outwitted investigators. A close friend says overcoming a longstanding habit has been a different matter.",
         image: "indoor_dramatic_cinematic_realistic_photo_film_s.png"
+      ,
+        readMinutes: 2
       },
 
 
@@ -695,6 +697,8 @@
         dek: "A bus manufacturer promises rooftop seats and safety belts, as an influencer celebrates progress without the expense of more buses or wider roads.",
 
         image: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Bus_with_Passengers_-_Indian_National_Highway_34_-_Nakashipara_-_Nadia_2013-03-23_7099.JPG"
+      ,
+        readMinutes: 2
       },
 
 
@@ -716,6 +720,8 @@
         dek: "Residents say a volunteer’s eight-month cleanup has created an efficient arrangement: they provide the garbage, and he provides the cleaning.",
 
         image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Plastic_waste_in_river.jpg"
+      ,
+        readMinutes: 1
       },
 
 
@@ -737,6 +743,8 @@
         dek: "Raghav Mehta says an AI reconstruction made him less handsome than he remembers. The photographic evidence has complicated the case.",
 
         image: "mehta_ai_vs_original.png"
+      ,
+        readMinutes: 2
       },
 
 
@@ -756,6 +764,8 @@
         categories: ["India"],
 
         dek: "New training standards will require recruits to chase an instructor who grabs a police van key, with a viral incident providing the minimum running-speed benchmark."
+      ,
+        readMinutes: 1
       },
 
 
@@ -775,6 +785,8 @@
         categories: ["Culture"],
 
         dek: "A mother wants her son to get a permanent government job in Kolkata. His wife wants him transferred as far away as possible."
+      ,
+        readMinutes: 2
       },
 
 
@@ -796,6 +808,8 @@
         dek: "Researchers say ordinary congestion may no longer be enough to explain why a short trip can consume an alarming portion of the day.",
 
         image: "https://commons.wikimedia.org/wiki/Special:FilePath/TRAFFIC_VIEW_IN_BANGALORE.jpg"
+      ,
+        readMinutes: 2
       },
 
 
@@ -815,6 +829,8 @@
         categories: ["India"],
 
         dek: "Police examine fingerprints, DNA and CCTV footage as an apparently routine birthday cake becomes the focus of an unusually serious investigation."
+      ,
+        readMinutes: 2
       },
 
 
@@ -909,7 +925,7 @@
         timeZone: "UTC"
       });
 
-      return `<div class="story-date">${formatted}</div>`;
+      return `<div class="story-date">${formatted}${article.readMinutes ? ` · ${article.readMinutes} min read` : ""}</div>`;
     }
 
 
@@ -1168,4 +1184,6 @@
   </script>
 
 </body>
-</html>
+</html>,
+        readMinutes: 1
+      
