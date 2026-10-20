@@ -119,6 +119,16 @@
       text-underline-offset: 5px;
     }
 
+    /* More dropdown: World and Opinion */
+    .nav-more { position: relative; display: flex; align-items: center; }
+    .nav-more-button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; border: 0; background: transparent; padding: 0; cursor: pointer; }
+    .nav-more-button:hover, .nav-more-button[aria-expanded="true"], .nav-more-button.active { color: var(--accent); }
+    .nav-more-menu { display: none; position: absolute; z-index: 20; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); min-width: 130px; padding: 7px 0; border: 1px solid #151515; background: var(--paper); box-shadow: 0 5px 12px #0002; }
+    .nav-more.open .nav-more-menu { display: flex; flex-direction: column; }
+    .nav-more-menu a { padding: 9px 16px; white-space: nowrap; }
+    .nav-more-menu a:hover { background: #eeeae1; }
+    @media (max-width: 620px) { nav { gap: 15px; } }
+
     /* Divider before About Us in navigation */
     .nav-divider {
       width: 1px;
@@ -561,15 +571,21 @@
 
       <a href="?category=india" data-category="India">India</a>
 
-      <a href="?category=world" data-category="World">World</a>
-
       <a href="?category=business" data-category="Business">Business</a>
 
       <a href="?category=technology" data-category="Technology">Technology</a>
 
       <a href="?category=culture" data-category="Culture">Culture</a>
 
-      <a href="?category=opinion" data-category="Opinion">Opinion</a>
+      <a href="?category=movie" data-category="Movie">Movie</a>
+
+      <div class="nav-more">
+        <button type="button" class="nav-more-button" aria-expanded="false" aria-haspopup="true" aria-controls="more-sections">More <span aria-hidden="true">▾</span></button>
+        <div class="nav-more-menu" id="more-sections">
+          <a href="?category=world" data-category="World">World</a>
+          <a href="?category=opinion" data-category="Opinion">Opinion</a>
+        </div>
+      </div>
 
       <!-- Informational page, separated from news categories -->
       <span class="nav-divider" aria-hidden="true"></span>
@@ -812,6 +828,7 @@
       "Business",
       "Technology",
       "Culture",
+      "Movie",
       "Opinion"
     ];
 
@@ -1063,6 +1080,27 @@
     }
 
 
+    // Toggle the More menu by click, keyboard and outside click.
+    const moreNav = document.querySelector(".nav-more");
+    const moreButton = moreNav.querySelector(".nav-more-button");
+    moreButton.addEventListener("click", () => {
+      const isOpen = moreNav.classList.toggle("open");
+      moreButton.setAttribute("aria-expanded", String(isOpen));
+    });
+    document.addEventListener("click", event => {
+      if (!moreNav.contains(event.target)) {
+        moreNav.classList.remove("open");
+        moreButton.setAttribute("aria-expanded", "false");
+      }
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        moreNav.classList.remove("open");
+        moreButton.setAttribute("aria-expanded", "false");
+        moreButton.focus();
+      }
+    });
+
     // Find out which category the visitor opened
 
     const url = new URLSearchParams(window.location.search);
@@ -1073,6 +1111,10 @@
       section.toLowerCase() === requestedCategory.toLowerCase()
     ) || "All";
 
+
+    if (activeCategory === "World" || activeCategory === "Opinion") {
+      moreButton.classList.add("active");
+    }
 
     // Finally, display the homepage
 
