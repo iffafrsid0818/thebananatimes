@@ -1042,16 +1042,14 @@
           }))
           .filter(group => group.stories.length > 0);
 
-        // Put the river story directly below the Durga Puja story in the right column.
+        // River story is its own India box, directly beneath the Culture box.
         const riverStory = remaining.find(a => a.href === riverHref);
         if (riverStory) {
-          const cultureGroup = otherCategories.find(group => group.name === "Culture");
-          if (cultureGroup) {
-            const durgaIndex = cultureGroup.stories.findIndex(a => a.href === "ai-durga-pandal-conflicting-prayers.html");
-            cultureGroup.stories.splice(durgaIndex >= 0 ? durgaIndex + 1 : cultureGroup.stories.length, 0, riverStory);
-          } else {
-            otherCategories.push({name: "Culture", stories: [riverStory]});
-          }
+          const cultureIndex = otherCategories.findIndex(group => group.name === "Culture");
+          otherCategories.splice(cultureIndex >= 0 ? cultureIndex + 1 : otherCategories.length, 0, {
+            name: "India",
+            stories: [riverStory]
+          });
         }
 
         // Preserve any uncategorized stories instead of omitting them.
