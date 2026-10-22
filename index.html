@@ -671,7 +671,7 @@
         date: "2026-10-22",
         title: "‘Zihaal-e-Miskin’: A Love Story in Need of a Mechanic",
         category: "Movie",
-        categories: ["Movie", "Culture"],
+        categories: ["Movie"],
         dek: "A damaged motorcycle mirror leads to drinking, heartbreak and a wedding-day mystery in a musical tragedy about the consequences of bad decisions.",
         image: "zihaal-mirror.jpg",
         readMinutes: 2
@@ -1069,11 +1069,10 @@
       // Keep the two most recent stories in the existing featured box.
       // On the homepage, arrange all remaining stories in category boxes.
       if (category === "All") {
-        // Editorial placement: Vijay first, bus second. River follows Durga in the right column.
+        // Feature the latest story first, followed by the next most recent. River follows Durga in the right column.
         const findByHref = href => selectedArticles.find(article => article.href === href);
         const featured = [
-          findByHref("vijay-salgaonkar-gutkha.html"),
-          findByHref("bus-rooftop-seating.html")
+          ...selectedArticles.slice(0, 2)
         ].filter(Boolean);
         const remaining = selectedArticles.filter(article => !featured.includes(article));
         const hasCategory = (article, name) =>
