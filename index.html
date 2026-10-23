@@ -529,6 +529,35 @@
       display: block;
       margin-bottom: 8px;
     }
+    /* Bus story thumbnail test: use its existing image only in lower story boxes. */
+    .category-panel > .story-card.bus-thumbnail {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .category-panel > .story-card.bus-thumbnail .story-image {
+      width: 120px;
+      height: 90px;
+      align-self: start;
+    }
+    .category-panel > .story-card.bus-thumbnail .story-image img {
+      position: static;
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+    }
+    @media (max-width: 400px) {
+      .category-panel > .story-card.bus-thumbnail {
+        grid-template-columns: 90px minmax(0, 1fr);
+        gap: 12px;
+      }
+      .category-panel > .story-card.bus-thumbnail .story-image,
+      .category-panel > .story-card.bus-thumbnail .story-image img {
+        width: 90px;
+        height: 68px;
+      }
+    }
     /* Match existing homepage headline links inside category boxes. */
     .category-panel .story-card a,
     .category-panel .story-card a:visited {
@@ -965,7 +994,8 @@
 
       // Show an image only for the first two displayed stories.
       // Leave all image URLs in the article data unchanged.
-      const hasImage = showImage && Boolean(article.image);
+      const isBusThumbnail = article.href === "bus-rooftop-seating.html" && !showImage;
+      const hasImage = (showImage || isBusThumbnail) && Boolean(article.image);
       const imageHTML = hasImage
         ? `<a class="story-image" href="${escapeHTML(article.href)}">
              <img src="${escapeHTML(article.image)}" alt="Article illustration" loading="lazy">
@@ -973,7 +1003,7 @@
         : "";
 
       return `
-        <article class="story-card ${hasImage ? "with-image" : "text-only"}">
+        <article class="story-card ${hasImage ? "with-image" : "text-only"} ${isBusThumbnail ? "bus-thumbnail" : ""}">
 
           ${imageHTML}
 
