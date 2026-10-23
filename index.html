@@ -529,11 +529,11 @@
       display: block;
       margin-bottom: 8px;
     }
-    /* Bus-only thumbnail test: landscape image above the full-width headline. */
-    .category-panel > .story-card.bus-thumbnail {
+    /* Existing article photographs in lower story boxes. */
+    .category-panel > .story-card.category-image {
       display: block;
     }
-    .category-panel > .story-card.bus-thumbnail .story-image {
+    .category-panel > .story-card.category-image .story-image {
       display: block;
       width: 100%;
       height: 140px;
@@ -541,7 +541,7 @@
       align-self: auto;
       overflow: hidden;
     }
-    .category-panel > .story-card.bus-thumbnail .story-image img {
+    .category-panel > .story-card.category-image .story-image img {
       position: static;
       display: block;
       width: 100%;
@@ -807,7 +807,9 @@
 
         categories: ["India"],
 
-        dek: "New training standards will require recruits to chase an instructor who grabs a police van key, with a viral incident providing the minimum running-speed benchmark."
+        dek: "New training standards will require recruits to chase an instructor who grabs a police van key, with a viral incident providing the minimum running-speed benchmark.",
+
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Someone_handing_a_key_over.jpg"
       ,
         readMinutes: 1
       },
@@ -874,7 +876,9 @@
 
         categories: ["India"],
 
-        dek: "Police examine fingerprints, DNA and CCTV footage as an apparently routine birthday cake becomes the focus of an unusually serious investigation."
+        dek: "Police examine fingerprints, DNA and CCTV footage as an apparently routine birthday cake becomes the focus of an unusually serious investigation.",
+
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Hussain_Sagar_Tank_Bund_Hyderabad.jpg"
       ,
         readMinutes: 2
       },
@@ -895,7 +899,9 @@
 
         categories: ["India"],
 
-        dek: "A dispute over who qualified for a samosa after detention has expanded into demands for transparent eligibility rules — and questions about what the samosa actually certifies."
+        dek: "A dispute over who qualified for a samosa after detention has expanded into demands for transparent eligibility rules — and questions about what the samosa actually certifies.",
+
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Samosa.jpg"
       }
 
 
@@ -982,10 +988,10 @@
       const label = article.category ||
         getCategories(article).join(" · ");
 
-      // Show an image only for the first two displayed stories.
-      // Leave all image URLs in the article data unchanged.
-      const isBusThumbnail = article.href === "bus-rooftop-seating.html" && !showImage;
-      const hasImage = (showImage || isBusThumbnail) && Boolean(article.image);
+      // Featured stories retain their existing large-image layout.
+      // Other stories reuse their own article images above their headlines.
+      const isCategoryImage = !showImage && Boolean(article.image);
+      const hasImage = Boolean(article.image) && (showImage || isCategoryImage);
       const imageHTML = hasImage
         ? `<a class="story-image" href="${escapeHTML(article.href)}">
              <img src="${escapeHTML(article.image)}" alt="Article illustration" loading="lazy">
@@ -993,7 +999,7 @@
         : "";
 
       return `
-        <article class="story-card ${hasImage ? "with-image" : "text-only"} ${isBusThumbnail ? "bus-thumbnail" : ""}">
+        <article class="story-card ${hasImage ? "with-image" : "text-only"} ${isCategoryImage ? "category-image" : ""}">
 
           ${imageHTML}
 
